@@ -4,9 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Bangers' rel='stylesheet'>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>Pubg prediction page</title>
+    <style>
+        input{
+            margin-top: 2px;
+            border: 0;
+            border-bottom: 2px solid #4A4A4A;
+            background-color: transparent;
+            outline: 0;
+        }
+        h1{
+            font-family: 'Bangers';
+            font-size: 50px;
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar navbar-default">
@@ -18,61 +32,61 @@
   </div>
 </nav>
    <div class="login container-fluid" id="predictPage" style="height: 600px; width: auto; background-image: url('static/pubgcar.jpg'); padding-left: 100px">
-	<h1 align="center" style="color: white">Predict your PUBG winning chances</h1>
-    <div style="border: 2px red solid; height: 390px; width: 500px; background-color: #96d5eb; font-size: 16">
-    <form action="{{ url_for('predict')}}" method="post">
+	<h1 align="center" style="color: white;" >Predict your PUBG winning chances</h1>
+    <div style="border: 2px white solid; height: 390px; width: 500px; background-color: black; color: white; font-size: 16">
+    <form action="{{ url_for('predict')}}" method="post" style="padding-left: 5px; padding-top: 5px; padding-right: 3px">
         <table>
             <tr>
                 <td>Walk distance(in meters):</td>
-                <td><input type="text" name="walkDistance" placeholder="Walk distance in meters" required="required" /></td>
+                <td><input type="text" name="walkDistance" required="required" /></td>
             </tr>
 
             <tr>
                 <td>Kill place(ranking in match in terms of number of enemies killed): </td>
-                <td><input type="text" name="killPlace" placeholder="Kill place" required="required" /></td>
+                <td><input type="text" name="killPlace" required="required" /></td>
             </tr>
 
             <tr>
                 <td>Total distance(in meters):</td>
-                <td><input type="text" name="totalDistance" placeholder="total distance in meters" required="required" /></td>
+                <td><input type="text" name="totalDistance" required="required" /></td>
             </tr>
 
             <tr>
                 <td>Weapons acquired(Number of weapons picked up):</td>
-                <td><input type="text" name="weaponsAcquired" placeholder="Weapons acquired" required="required" /></td>
+                <td><input type="text" name="weaponsAcquired" required="required" /></td>
             </tr>
 
             <tr>
                 <td>No. of boosts used:</td>
-                <td><input type="text" name="boosts" placeholder="Boosts used in the match" required="required" /></td>
+                <td><input type="text" name="boosts"  required="required" /></td>
             </tr>
             <tr>
                 <td>Max place:</td>
-                <td><input type="text" name="maxPlace" placeholder="max place" required="required"/></td>
+                <td><input type="text" name="maxPlace"  required="required"/></td>
             </tr>
             <tr>
                 <td>No. of healing items used:</td>
-                <td><input type="text" name="heals" placeholder="Heals used in the match" required="required" /></td>
+                <td><input type="text" name="heals" required="required" /></td>
             </tr>
             <tr>
                 <td>Longest kill distance(in meters):</td>
-                <td> <input type="text" name="longestKills" placeholder="longest kill distance in meters" required="required" /></td>
+                <td> <input type="text" name="longestKills"  required="required" /></td>
             </tr>
             <tr>
                 <td>No. of players in the team:</td>
-                <td> <input type="text" name="playersTeam" placeholder="players in team" required="required" /></td>
+                <td> <input type="text" name="playersTeam"  required="required" /></td>
             </tr>
             <tr>
                 <td>Total damage dealt:</td>
-                <td><input type="text" name="damageDealt" placeholder="Damage Dealt" required="required" /></td>
+                <td><input type="text" name="damageDealt"  required="required" /></td>
             </tr>
             <tr>
                 <td>Ride diatance(in meters):</td>
-                <td><input type="text" name="rideDistance" placeholder="Ride distance" required="required" /></td>
+                <td><input type="text" name="rideDistance" required="required" /></td>
             </tr>
             <tr>
                 <td>No. of kills:</td>
-                <td><input type="text" name="kills" placeholder="kills" required="required" /></td>
+                <td><input type="text" name="kills"  required="required" /></td>
             </tr>
             <tr>
                 <td><button class="btn btn-primary" type="submit" >Predict</button></td>
@@ -80,9 +94,9 @@
         </table>      
     </form>
 <br>
-   <b>Percentage of winning the match:</b> <input type="text" name="output" value="{{ prediction_text }}" disabled="true" style="width: auto;" />
+  
 </div>
-   
+    <h2 style="color: white" align="center"><b>Percentage of winning the match:<input type="text" name="output" value="{{ prediction_text }}" disabled="true" style="width: auto;" /></b></h2>
  </div>
  <div id="insightsGame" class="container container-fluid" style="height: 2000px; width: auto; background-image: url('static/pubgcar2_c.jpg');">
     <h1 align="center" style="color: white"><u>Effects of different factors on winning a match</u></h1>
